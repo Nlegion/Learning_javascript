@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function factorial(n) 
+{if (n == 0) 
+	{return 1;} 
+	else if (n < 0) {
+		alert('Факториал рассчитывается только для натуральных чисел.');} 
+	else {return factorial(n - 1) * n;}
+}
+
+function mass_a(n)
+{ var mas = [];
+	for (var i = 0; i < n; i++) {mas[i] = i+1;}
+	return mas;
+} 
+
+function mass_b(mas_in)
+{ var x = 0;
+	for (var i = 0; i < mas_in.length; i++) { x = x + mas_in[i];}
+	return x;
+}
+
+function mass_с(mas_in)
+{ var x = 0;
+	for (var i = 0; i <= mas_in.length; i++) {if (x < mas_in[i]) {x = mas_in[i]}}
+	return x;
+} 
+
+function mass_d(mas_in)
+{ var x = 0;
+	for (var i = 0; i <= mas_in.length; i++) {if (x > mas_in[i]) {x = mas_in[i]}}
+	return x;
+} 
+
+function mass_f(mas_in)
+{ var mas_out = [];
+	var x = 0;
+	for (var i = 0; i < mas_in.length; i++) {if ((mas_in[i] % 2) == 0) {mas_out[x] = mas_in[i]; x = x + 1; }}
+	return mas_out;
+} 
+
+var mas_in = [];
+do {var n = prompt ("введите число");}
+while (isNaN(n) || n < 0)
+
+for (var i = 0; i < n; i++) {mas_in[i] = i;}
+
+document.write("Факториал: " + factorial(n));
+document.write("<br \/> Функция а: " + mass_a(n));
+
+document.write("<br \/> Входной массив: " + mas_in);
+document.write("<br \/> Функция b: " + mass_b(mas_in));
+document.write("<br \/> Функция с: " + mass_с(mas_in));
+document.write("<br \/> Функция d: " + mass_d(mas_in));
+document.write("<br \/> Функция f: " + mass_f(mas_in));
+</script>

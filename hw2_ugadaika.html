@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+var answer = parseInt(Math.random() * 100);
+var win = 0;
+var user_num = 1;
+
+while ( win < 1 ) {
+	alert ("Ход игрока №" + user_num)
+	do { var userAnswer = prompt("Угадайте число от 0 до 100");} //проверка на ввод числа
+	while (isNaN(userAnswer) || userAnswer < 0) 
+	userAnswer = parseInt(userAnswer);
+	
+	if(userAnswer > answer) 
+	{
+			userAnswer = prompt("Ваш ответ слишком большой. Сдаётесь? \n для завершения напишите: да");
+			if (userAnswer == 'да') 
+				{
+				if (user_num == 1) 
+					{alert("Победил игрок №2");}
+				else {alert("Победил игрок №1")};
+			break;}
+				} 
+		else if (userAnswer < answer) {
+			userAnswer = prompt("Ваш ответ слишком маленький. Сдатёсь? \n для завершения напишите: да");
+			if (userAnswer == 'да') 
+				{
+				if (user_num == 1) 
+					{alert("Победил игрок №2");}
+				else {alert("Победил игрок №1")};
+			break;}
+	} 
+		else if (userAnswer == answer) {win++; alert("Вы угадали! Победил игрок № " + user_num); break;} 
+		else {alert("Необходимо ввести число!");}
+
+	if (user_num == 1) {user_num = 2;}
+		else {user_num = 1;}
+	}
+
+</script>

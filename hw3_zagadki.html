@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function user_answer(text)
+	{ text = prompt ("Ваш ответ");
+	text = text.toLowerCase(); //перевод в нижний регистр
+		while (text == "") //проверка на наличие текста
+			{alert ("Нужно ввести текст");
+			text = prompt (text);
+			text = text.toLowerCase();}
+			return text;}
+
+var count_z = 0;
+var text = "";
+var tryCount = 0;
+var count_zag = 1;
+var maxTryCount = 3;
+
+var zagadki = [
+	["Загадка 1: А и Б сидели на трубе, а-упала,б-пропала, кто остался на трубе",["и"]],
+	["Загадка 2: Что делает сторож, когда у него на голове сидит воробей?",["спит"]],
+	["Загадка 3: Каких камней нет в море?",["сухих"]],
+	["Загадка 4: Имя первой женщины в мире освоившей летательный аппарат?",["яга","баба яга"]]
+];
+
+for (var i = 0; i <= zagadki.length; i++)
+	{alert (zagadki[i][0]);
+		while (maxTryCount != tryCount){
+			if (zagadki[i][1].includes(user_answer(text))) {
+				alert ("Правильный ответ!");
+				count_z++;
+				tryCount = 0;
+				break;}
+			else if (maxTryCount == tryCount) {break;}	
+			else {tryCount = tryCount + 1;
+				alert ("Попробуй еще раз =(\n" + "Осталось попыток: " + (maxTryCount - tryCount));
+				}
+			}
+		alert ("Загадок решено: " + count_z + " из 4");
+		if ((maxTryCount == tryCount) && (count_z != 4)) 
+			{alert ("Вы проиграли =("); break;}
+		else if ((maxTryCount != tryCount) && (count_z == 4)) 
+			{alert ("Вы победили!"); break;}
+}	
+</script>

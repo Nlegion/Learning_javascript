@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+do {
+var summ = prompt ("введите сумму вклада");}
+while (isNaN(summ) || summ < 0)
+
+do {
+var proc = prompt ("введите процент");}
+while (isNaN(proc) || proc < 0)
+
+summ = parseFloat (summ);
+proc = parseFloat (proc);
+
+var year = 5;
+
+for (var i = 1; i <= year; i++) {
+	document.write ("<br \/> Год: " + i );
+	document.write ("<br \/>  Сумма до: " + summ.toFixed(2));
+	f_proc = (summ / 100) * proc;
+	document.write ("<br \/>  Сумма процента: " + f_proc.toFixed(2));
+	summ = summ + f_proc;
+	document.write ("<br \/> Сумма по итогам года: " + summ.toFixed(2));
+	document.write ("<br \/> ");
+	}
+
+</script>

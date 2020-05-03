@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+//загадки	
+var zag1 = "Загадка 1: А и Б сидели на трубе, а-упала,б-пропала, кто остался на трубе?";
+var cor_a_1 = "и";
+var zag2 = "Загадка 2: Что делает сторож, когда у него на голове сидит воробей?";
+var cor_a_2 = "спит";
+var zag3 = "Загадка 3: Каких камней нет в море?";
+var cor_a_3 = "сухих";
+var zag4 = "Загадка 4: Имя первой женщины в мире освоившей летательный аппарат?";
+var cor_a_4_1 = "яга";
+var cor_a_4_2 = "баба яга";
+
+var answer2 = " "; 
+var count_z = 0;
+var tryCount = 0;
+var count_zag = 1;
+var maxTryCount = 2;
+
+for (var j = 1; count_zag <= 4; count_zag++) {
+		if (count_z == 0) //измение загадки
+			{zag = zag1;
+				answer = cor_a_1;}
+			else if (count_z == 1)
+			{zag = zag2;
+				answer = cor_a_2;}
+			else if (count_z == 2)
+			{zag = zag3;
+				answer = cor_a_3;}
+			else if (count_z == 3) 
+			{zag = zag4;
+				answer = cor_a_4_1;
+				answer2 = cor_a_4_2}
+
+			var user_a = prompt (zag);
+			user_a = user_a.toLowerCase(); //перевод в нижний регистр
+			while (user_a == "") //проверка на наличие текста
+				{alert ("Нужно ввести текст");
+				user_a = prompt (zag);
+				user_a = user_a.toLowerCase();}
+
+			for (var i = 1; tryCount <= maxTryCount; tryCount++) {
+				if ((user_a == answer) || (user_a == answer2))  
+					{alert ("Правильный ответ!");
+					count_z++;
+					tryCount = 0;
+					break;}
+				else {alert ("Попробуй еще раз =(\n" + "Осталось попыток: " + (maxTryCount - tryCount));}
+				user_a = prompt (zag);
+				user_a = user_a.toLowerCase();
+			}
+		alert ("Загадок решено: " + count_z + " из 4");	
+		}
+if (count_z == 4) {alert ("Победа!");}
+	else {alert ("Проигрыш!");}
+
+</script>
