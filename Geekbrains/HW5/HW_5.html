@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Шахматная доска. Упражнение 5</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="cont">
+        <script>
+            'use strict';
+            document.write('<table style = "border-style : solid">');
+            let z = 0;
+            let literal = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',]
+            for (var k = 1; k <= 8; k++) {
+                document.write('<tr>');
+                z += 1;
+                document.write('<td style = "width : 30px; height : 30px; text-align:center;">', z, '</td>');
+                if (k % 2 == 0) {
+
+                    for (var i = 1; i <= 8; i++) {
+                        if (i % 2 == 0) {
+
+                            document.write('<td style = "width : 30px; height : 30px; background-color : Silver"></td>');
+                        }
+                        else {
+                            document.write('<td style = "width : 30px; height : 30px; background-color : black"></td>');
+                        };
+                    };
+                }
+                else {
+                    for (var i = 1; i <= 8; i++) {
+                        if (i % 2 == 0) {
+                            document.write('<td style = "width : 30px; height : 30px; background-color : black"></td>');
+                        }
+                        else {
+                            document.write('<td style = "width : 30px; height : 30px; background-color : Silver"></td>');
+                        };
+                    };
+                }
+                document.write('</tr>');
+            };
+            for (var i = 0; i <= 8; i++) {
+                document.write('<td style = "width : 30px; height : 30px; text-align:center;">', literal[i], '</td>');
+            };
+            document.write('</table>');
+        </script>
+    </div>
+</body>
+
+</html>
